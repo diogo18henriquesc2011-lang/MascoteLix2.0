@@ -1,4 +1,4 @@
-name: Compilar APK do Mascote 
+name: Compilar APK do Axolote
 
 on:
   push:
@@ -9,15 +9,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Compilar com Buildozer
       uses: ArtemSBulgakov/buildozer-action@v1
       with:
         command: android debug
-
+        
     - name: Guardar o APK gerado
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: meu-mascote-apk
         path: bin/*.apk
